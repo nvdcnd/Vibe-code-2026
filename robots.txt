@@ -1,0 +1,9 @@
+# robots.txt — app một trang, toàn bộ nội dung nằm ở "/".
+# Không liệt kê Sitemap ở đây: miền production chưa biết; khi deploy với SITE_URL
+# thì build-dist.mjs tự sinh sitemap.xml (xem README mục "Triển khai").
+User-agent: *
+Allow: /
+
+# Không có gì để index, và tải ảnh hàng loạt chỉ tốn băng thông.
+Disallow: /api/
+Disallow: /media/

@@ -1,0 +1,18 @@
+# Nguồn/asset kế thừa: giữ nguyên định dạng gốc (chỉ lint, không reformat),
+# để review diff không bị nhiễu bởi thay đổi style toàn file.
+app.js
+styles.css
+index.html
+functions/**
+DOCUMENT.md
+favicon.svg
+
+# Sinh tự động / không phải source
+package-lock.json
+dist/**
+node_modules/**
+.wrangler/**
+e2e-report/**
+playwright-report/**
+test-results/**
+.dev.vars

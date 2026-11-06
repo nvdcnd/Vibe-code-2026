@@ -1,0 +1,10 @@
+# Bản mẫu cho .dev.vars (local dev) — copy thành `.dev.vars` rồi điền key thật.
+# Trên Cloudflare Pages (production/preview): đặt GEMINI_API_KEY là **Secret**
+# trong Settings → Functions. Tuỳ chọn: GEMINI_MODEL là biến thường.
+#
+# Rate limit cần tạo 1 namespace KV và binding tên RATE_LIMIT_KV
+# (Settings → Functions → KV namespace bindings). Không binding = không giới hạn.
+
+GEMINI_API_KEY=
+# GEMINI_MODEL=gemini-3.8-flash   (mặc định trong functions/_lib.js)
+# RATE_LIMIT_DAILY=30

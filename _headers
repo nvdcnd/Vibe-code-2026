@@ -1,0 +1,21 @@
+# _headers — Cloudflare Pages đọc tệp này lúc deploy và gắn header cho asset tĩnh.
+# Lưu ý: chỉ áp cho asset tĩnh; Pages Functions tự đặt header trong code.
+#
+# CSP ở đây được thiết kế theo đúng những gì app thật sự cần:
+#  - script-src 'self'            : KHÔNG có inline script, không CDN lạ → chặn XSS chèn <script>.
+#  - style-src … 'unsafe-inline'  : bắt buộc, vì khung xem trước email là iframe srcdoc
+#                                   và kế thừa CSP của trang cha; email dựng layout bằng
+#                                   style="" inline. Đây là đánh đổi có chủ đích: CSS không
+#                                   đọc được dữ liệu nhạy cảm, còn script thì vẫn bị khoá.
+#  - img-src data: blob:          : thumbnail ảnh tải lên là data:/blob:, ảnh R2 là same-origin.
+#  - frame-src 'self'             : chỉ iframe nội bộ (srcdoc) — không nhúng site ngoài.
+#  - frame-ancestors 'none'       : chống clickjacking (kèm X-Frame-Options cho trình duyệt cũ).
+# Nếu thêm dịch vụ ngoài (analytics, font mới…), phải mở đúng directive tương ứng.
+
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; img-src 'self' data: blob:; connect-src 'self'; frame-src 'self'; frame-ancestors 'none'; object-src 'none'; base-uri 'none'; form-action 'none'
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), serial=()
+  Cross-Origin-Opener-Policy: same-origin
