@@ -9,7 +9,9 @@ Trình soạn email marketing: nhập thông tin chiến dịch → nhận **3 m
   app tự chạy **chế độ trải nghiệm** với nội dung mẫu và ghi rõ trạng thái trên UI — không
   bao giờ giả vờ là AI.
 
-> Tài liệu phân tích bản gốc + lịch sử thay đổi: [`DOCUMENT.md`](./DOCUMENT.md).
+> Tài liệu phân tích bản gốc + lịch sử thay đổi: [`DOCUMENT.md`](./DOCUMENT.md).  
+> Minh chứng sử dụng AI: [`AI_EVIDENCE.md`](./AI_EVIDENCE.md).  
+> Tài liệu kiểm thử chi tiết: [`TESTING.md`](./TESTING.md).  
 > README này là tài liệu dành cho người phát triển.
 
 ---
